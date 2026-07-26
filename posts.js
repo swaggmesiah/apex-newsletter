@@ -52,66 +52,6 @@ const POSTS = [
     ]
   },
 
-  {
-    id: "monza-three-corners",
-    tag: "race",
-    title: "Monza in slow motion: the three corners that decided P1",
-    summary: "Braking traces, throttle overlays, and the 0.4s that separated the front row.",
-    date: "SEP 08",
-    readTime: "9 MIN",
-    body: [
-      "Replace this placeholder with your full article text — just edit this array in posts.js. Each string in the list becomes its own paragraph on the article page.",
-      "You can have as many paragraphs as you like."
-    ]
-  },
-
-  {
-    id: "floor-edge-wings",
-    tag: "tech",
-    title: "Floor edge wings are back — here's what changed under the regs",
-    summary: "A quiet aero loophole is reshaping the midfield's downforce numbers.",
-    date: "SEP 05",
-    readTime: "6 MIN",
-    body: [
-      "Replace this placeholder with your full article text — just edit this array in posts.js."
-    ]
-  },
-
-  {
-    id: "silly-season-clauses",
-    tag: "paddock",
-    title: "Silly season heats up: reading between the contract clauses",
-    summary: "Three seats, two rumors, and one release clause nobody's talking about.",
-    date: "SEP 03",
-    readTime: "5 MIN",
-    body: [
-      "Replace this placeholder with your full article text — just edit this array in posts.js."
-    ]
-  },
-
-  {
-    id: "safety-car-math",
-    tag: "strategy",
-    title: "Safety car math: when a free stop actually costs you the race",
-    summary: "A model for the decision every strategist dreads making in real time.",
-    date: "AUG 30",
-    readTime: "8 MIN",
-    body: [
-      "Replace this placeholder with your full article text — just edit this array in posts.js."
-    ]
-  },
-
-  {
-    id: "power-unit-deal-2028",
-    tag: "tech",
-    title: "Inside the power unit deal that could reshape the grid in 2028",
-    summary: "Who's manufacturing, who's buying, and why it matters for the budget cap.",
-    date: "AUG 27",
-    readTime: "10 MIN",
-    body: [
-      "Replace this placeholder with your full article text — just edit this array in posts.js."
-    ]
-  }
 
   // 👇 To add a new post, paste a new block here, e.g.:
   //
