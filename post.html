@@ -282,8 +282,16 @@
         `<div class="row ${s.color || ''}"><span>${s.label}</span><b>${s.value}</b></div>`
       ).join('');
 
-      const bodyHTML = (post.body && post.body.length)
-        ? post.body.map(paragraph => `<p>${paragraph}</p>`).join('')
+      // body can be one plain block of text (paragraphs separated by a
+      // blank line) or, for backwards compatibility, an array of strings.
+      let paragraphs = [];
+      if (Array.isArray(post.body)) {
+        paragraphs = post.body;
+      } else if (typeof post.body === 'string' && post.body.trim()) {
+        paragraphs = post.body.trim().split(/\n\s*\n/);
+      }
+      const bodyHTML = paragraphs.length
+        ? paragraphs.map(paragraph => `<p>${paragraph.trim()}</p>`).join('')
         : `<p>${post.summary}</p>`;
 
       articleEl.innerHTML = `
