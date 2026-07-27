@@ -37,27 +37,9 @@ const POSTS = [
   {
     id: "undercut-died-2026",
     featured: true,
-    tag: "strategy",
-    title: "How the undercut quietly died in 2026 — and what teams do instead",
-    summary: "Pit windows used to be won on a single early stop. This season the numbers tell a different story: degradation models tightened, tyre allocations shifted, and the teams still calling the old play are losing track position, not gaining it. We pulled every stop from the last six rounds to find out why.",
-    date: "SEP 08",
-    readTime: "9 MIN",
-    stats: [
-      { label: "UNDERCUT SUCCESS RATE", value: "31%" },
-      { label: "FASTEST STOP THIS SEASON", value: "1.98s", color: "purple" },
-      { label: "AVG. TYRE DELTA (LAP 12)", value: "+0.6s/lap" },
-      { label: "OVERCUT WIN RATE", value: "54%", color: "green" },
-      { label: "SOURCE", value: "6 RACES / 118 STOPS" }
-    ],
-    body: `For years, the undercut was the closest thing strategy had to a cheat code. Pit early, put a fresh tyre on a driver still stuck in traffic, and let the lap-time delta do the rest. It worked because tyre falloff used to be steep and sudden — a driver on a 12-lap-old tyre was simply slower, full stop.
-
-That gap has been closing all season. Compound construction changes introduced over the winter flattened the degradation curve across the board, especially in the medium compound most teams lean on for the middle stint. The result: a car that pits a lap early isn't gaining nearly as much sudden pace advantage over the car that stays out.
-
-We pulled stop-by-stop data from the last six rounds — 118 pit stops in total — and the split is stark. Undercut attempts succeeded in putting a driver ahead on merit only 31% of the time, down from well over half in prior seasons. Meanwhile the overcut — staying out longer, then coming in on a tyre with more life left as others fade — is winning 54% of the time it's attempted.
-
-The teams that adapted fastest aren't necessarily the biggest names. It's the strategy groups willing to sit on their hands during a race, resist the instinct to react to a rival's pit call, and trust a model that says the free air a lap or two later is worth more than track position right now.
-
-None of this means the undercut is dead everywhere. Street circuits with heavy traffic and short pit lanes still reward it. But as a default opening move for the whole grid, its era looks to be ending — and the strategists still reaching for it out of habit are the ones losing ground.`
+    title: "Welcome to APEX! - A newsletter fully immersed into every essential aspect that makes F1 the sport it is.",
+    summary: "What sets APEX apart from it's competition is that our newsletter does not involve gossip materials, we focus on what is front of us and only what is front of us. If you're into the essnetials of this sport, feel free to subscribe for the newsletter to recieve your very own specialized news on your e-mail..",
+    date: "JUL 27",
   },
 
   {
