@@ -60,6 +60,7 @@ const POSTS = [
     title: "Welcome to APEX! - A newsletter that is fully immersed into every aspect of what makes F1 great.",
     summary: "What makes APEX different from the competition is that for us, every race is another story to see it unfold. We're just as excited to share our knowledge and information about the second-most-grossing sport of all time. If you're interested, you can subscribe to our newsletter to get a new report for every race.",
     date: "JUL 27",
+  },
   {
     id: "monza-three-corners",
     tag: "race",
@@ -72,45 +73,6 @@ const POSTS = [
 Leave a blank line whenever you want to start a new paragraph, like this one.`
   },
 
-  {
-    id: "floor-edge-wings",
-    tag: "tech",
-    title: "Floor edge wings are back — here's what changed under the regs",
-    summary: "A quiet aero loophole is reshaping the midfield's downforce numbers.",
-    date: "SEP 05",
-    readTime: "6 MIN",
-    body: `Replace this placeholder with your full article — just type normally between the backticks.`
-  },
-
-  {
-    id: "silly-season-clauses",
-    tag: "paddock",
-    title: "Silly season heats up: reading between the contract clauses",
-    summary: "Three seats, two rumors, and one release clause nobody's talking about.",
-    date: "SEP 03",
-    readTime: "5 MIN",
-    body: `Replace this placeholder with your full article — just type normally between the backticks.`
-  },
-
-  {
-    id: "safety-car-math",
-    tag: "strategy",
-    title: "Safety car math: when a free stop actually costs you the race",
-    summary: "A model for the decision every strategist dreads making in real time.",
-    date: "AUG 30",
-    readTime: "8 MIN",
-    body: `Replace this placeholder with your full article — just type normally between the backticks.`
-  },
-
-  {
-    id: "power-unit-deal-2028",
-    tag: "tech",
-    title: "Inside the power unit deal that could reshape the grid in 2028",
-    summary: "Who's manufacturing, who's buying, and why it matters for the budget cap.",
-    date: "AUG 27",
-    readTime: "10 MIN",
-    body: `Replace this placeholder with your full article — just type normally between the backticks.`
-  },
 
   {
     // A minimal example — proof that only "title" is required.
