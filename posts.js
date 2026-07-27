@@ -61,17 +61,6 @@ const POSTS = [
     summary: "What makes APEX different from the competition is that for us, every race is another story to see it unfold. We're just as excited to share our knowledge and information about the second-most-grossing sport of all time. If you're interested, you can subscribe to our newsletter to get a new report for every race.",
     date: "JUL 27",
   },
-  {
-    id: "monza-three-corners",
-    tag: "race",
-    title: "Monza in slow motion: the three corners that decided P1",
-    summary: "Braking traces, throttle overlays, and the 0.4s that separated the front row.",
-    date: "SEP 08",
-    readTime: "9 MIN",
-    body: `Replace this placeholder with your full article — just type normally in this space between the backticks.
-
-Leave a blank line whenever you want to start a new paragraph, like this one.`
-  },
 
 
   {
