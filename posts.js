@@ -60,6 +60,7 @@ const POSTS = [
     title: "Welcome to APEX! - A newsletter that is fully immersed into every aspect of what makes F1 great.",
     summary: "What makes APEX different from the competition is that for us, every race is another story to see it unfold. We're just as excited to share our knowledge and information about the second-most-grossing sport of all time. If you're interested, you can subscribe to our newsletter to get a new report for every race.",
     date: "JUL 27",
+    readTime: "3 MIN",
   },
 
 
