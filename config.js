@@ -19,9 +19,9 @@
 // ============================================================
 
 window.SITE_CONFIG = {
-  homepagePostCount: 8,
+  homepagePostCount: 5,
   nextRace: {
-    name: "Singapore Grand Prix",
-    date: "2026-09-20T20:00:00+03:00"
+    name: "Dutch Grand Prix",
+    date: "2026-09-21T10:00:00+03:00"
   }
 };
