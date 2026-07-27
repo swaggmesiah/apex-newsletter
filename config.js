@@ -22,6 +22,6 @@ window.SITE_CONFIG = {
   homepagePostCount: 5,
   nextRace: {
     name: "Dutch Grand Prix",
-    date: "2026-08-21T10:00:00+03:00"
+    date: "2026-08-21T13:30:00+03:00"
   }
 };
