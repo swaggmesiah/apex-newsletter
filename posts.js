@@ -63,12 +63,6 @@ const POSTS = [
   },
 
 
-  {
-    // A minimal example — proof that only "title" is required.
-    // No id, tag, summary, date, readTime, or body. It'll still show
-    // up on the homepage and get its own working page.
-    title: "Quick paddock note: nothing official yet on the 2028 calendar"
-  }
 
   // 👇 To add a new post, paste a new block here, e.g.:
   //
