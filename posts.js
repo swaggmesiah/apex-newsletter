@@ -58,7 +58,7 @@ const POSTS = [
     featured: true,
     tag: "strategy",
     title: "Welcome to APEX! - A newsletter dedicated to every aspect of what makes F1 great.",
-    summary: "What makes APEX different from the competition is that for us, every Grand Prix is another story yet to unfold. From strategy, tech that goes into the cars making them ever so complicated, regulation changes, upgrades and more to see. If that sounds like your ideal Formula 1 coverage, feel free to subscribe to our newsletter in order to get a new edition for every race.",
+    summary: "What makes APEX different from the competition is that for us, every Grand Prix is another story yet to unfold. From strategy, tech that goes into the cars making them ever so complicated, regulation changes, upgrades, paddock talks and more to see. If that sounds like your ideal Formula 1 coverage, feel free to subscribe to our newsletter in order to get a new edition for every race.",
     date: "JUL 27",
     readTime: "3 MIN",
     body: ``
