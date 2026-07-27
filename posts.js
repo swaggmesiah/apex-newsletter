@@ -40,6 +40,8 @@ const POSTS = [
     title: "Welcome to APEX! - A newsletter fully immersed into every essential aspect that makes F1 the sport it is.",
     summary: "What sets APEX apart from it's competition is that our newsletter does not involve gossip materials, we focus on what is front of us and only what is front of us. If you're into the essnetials of this sport, feel free to subscribe for the newsletter to recieve your very own specialized news on your e-mail..",
     date: "JUL 27",
+    readTime: "3 MIN",
+    body: ' ',
   },
 
   {
