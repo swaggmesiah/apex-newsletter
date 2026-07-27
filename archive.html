@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — APEX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E1113;
+    --bg-alt: #14181B;
+    --surface: #171B1E;
+    --surface-2: #1D2226;
+    --hairline: #262C30;
+    --text: #F2F1ED;
+    --text-dim: #9AA1A5;
+    --text-faint: #5C6367;
+    --red: #E8112D;
+    --purple: #A855F7;
+    --yellow: #FFD400;
+    --green: #00D46A;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(232,17,45,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 20%, rgba(168,85,247,0.06), transparent 60%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background: var(--red); color:#fff; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* Ticker */
+  .ticker-bar{
+    border-bottom: 1px solid var(--hairline);
+    background: var(--bg-alt);
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: var(--text-dim);
+    padding: 8px 0;
+  }
+  .ticker-track{
+    display: inline-flex;
+    gap: 48px;
+    animation: scroll-left 32s linear infinite;
+    padding-left: 100%;
+  }
+  .ticker-track span{ display:inline-flex; align-items:center; gap:10px; }
+  .ticker-track b{ color: var(--text); font-weight: 600; }
+  .dot{ width:5px; height:5px; border-radius:50%; display:inline-block; }
+  @keyframes scroll-left{ 0%{ transform: translateX(0); } 100%{ transform: translateX(-100%); } }
+
+  /* Header */
+  header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 22px 5vw; border-bottom: 1px solid var(--hairline);
+    position: sticky; top:0;
+    background: rgba(14,17,19,0.85); backdrop-filter: blur(10px); z-index: 50;
+  }
+  .logo{ font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; display:flex; align-items:center; gap: 10px; }
+  .logo .bar{ width: 6px; height: 22px; background: var(--red); border-radius: 1px; transform: skewX(-12deg); }
+  nav{ display:flex; gap: 34px; font-size: 14px; color: var(--text-dim); }
+  nav a{ position:relative; padding: 4px 0; transition: color 0.2s; }
+  nav a:hover{ color: var(--text); }
+  .subscribe-btn{
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
+    border: 1px solid var(--hairline); padding: 9px 18px; border-radius: 3px; color: var(--text);
+    transition: all 0.2s ease; background: transparent; cursor:pointer;
+  }
+  .subscribe-btn:hover{ border-color: var(--red); background: rgba(232,17,45,0.08); }
+
+  /* Page head */
+  .page-head{ padding: 8vh 5vw 5vh; border-bottom: 1px solid var(--hairline); }
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-dim);
+    margin-bottom: 26px; transition: color 0.2s ease;
+  }
+  .back-link:hover{ color: var(--text); }
+  .page-head .kicker{
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+    color: var(--text-faint); display:block; margin-bottom: 14px;
+  }
+  .page-head h1{
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(34px, 5vw, 56px); letter-spacing: -0.02em;
+  }
+  .page-head .count{ margin-top: 12px; color: var(--text-dim); font-size: 15px; }
+
+  /* Filters */
+  .filters{
+    display:flex; gap: 10px; flex-wrap: wrap;
+    padding: 28px 5vw 0;
+  }
+  .filter-btn{
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.03em;
+    border: 1px solid var(--hairline); border-radius: 20px;
+    padding: 8px 16px; color: var(--text-dim);
+    background: transparent; cursor: pointer; transition: all 0.2s ease;
+  }
+  .filter-btn:hover{ color: var(--text); border-color: var(--text-dim); }
+  .filter-btn.active{ background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  /* List */
+  .archive-wrap{ padding: 5vh 5vw 10vh; }
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    padding: 5px 10px; border-radius: 3px; text-transform: uppercase;
+  }
+  .tag.race{ background: rgba(232,17,45,0.12); color: var(--red); }
+  .tag.tech{ background: rgba(168,85,247,0.12); color: var(--purple); }
+  .tag.paddock{ background: rgba(255,212,0,0.12); color: var(--yellow); }
+  .tag.strategy{ background: rgba(0,212,106,0.12); color: var(--green); }
+
+  .sheet{ display:flex; flex-direction:column; }
+  .sheet-row{
+    display:flex; align-items:center; gap: 20px;
+    padding: 22px 18px;
+    border-bottom: 1px solid var(--hairline);
+    transition: background 0.2s ease;
+  }
+  .sheet-row:first-child{ border-top: 1px solid var(--hairline); }
+  .sheet-row:hover{ background: var(--surface); }
+  .sheet-row:hover .pos{ color: var(--red); }
+  .sheet-row:hover .row-title{ transform: translateX(6px); }
+  .sheet-row .pos{ flex: 0 0 34px; font-family: var(--font-mono); font-size: 15px; color: var(--text-faint); transition: color 0.2s ease; }
+  .sheet-row .tag{ flex: 0 0 auto; }
+  .row-title{ flex: 1 1 auto; min-width: 0; font-family: var(--font-display); font-size: 17px; font-weight: 500; transition: transform 0.25s ease; }
+  .row-sub{ display:block; font-family: var(--font-body); font-size: 13px; color: var(--text-faint); font-weight: 400; margin-top: 4px; }
+  .row-time{ flex: 0 0 auto; font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); white-space: nowrap; }
+  .row-arrow{ flex: 0 0 16px; text-align:right; color: var(--text-faint); font-family: var(--font-mono); font-size: 13px; }
+
+  .empty-note{
+    padding: 60px 0; text-align:center; color: var(--text-faint);
+    font-family: var(--font-mono); font-size: 13px;
+  }
+
+  @media (max-width: 860px){
+    .sheet-row .row-time, .sheet-row .row-arrow{ display:none; }
+    nav{ display:none; }
+  }
+
+  /* Footer */
+  footer{ padding: 36px 5vw; display:flex; justify-content:space-between; align-items:center; font-size: 12px; color: var(--text-faint); font-family: var(--font-mono); border-top: 1px solid var(--hairline); }
+  footer .flags{ display:flex; gap: 6px; }
+  footer .flags .dot{ width:6px; height:6px; }
+  @media (max-width: 600px){
+    footer{ flex-direction:column; gap: 14px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span><span class="dot" style="background:var(--red)"></span> LIGHTS OUT — Monza analysis now live</span>
+      <span><span class="dot" style="background:var(--purple)"></span> <b>P1</b> tyre degradation model updated for wet-weather compounds</span>
+      <span><span class="dot" style="background:var(--yellow)"></span> Paddock whispers: 2027 engine reg meeting moved up</span>
+      <span><span class="dot" style="background:var(--green)"></span> New: interactive pit-stop strategy simulator</span>
+      <span><span class="dot" style="background:var(--red)"></span> LIGHTS OUT — Monza analysis now live</span>
+      <span><span class="dot" style="background:var(--purple)"></span> <b>P1</b> tyre degradation model updated for wet-weather compounds</span>
+      <span><span class="dot" style="background:var(--yellow)"></span> Paddock whispers: 2027 engine reg meeting moved up</span>
+      <span><span class="dot" style="background:var(--green)"></span> New: interactive pit-stop strategy simulator</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="logo"><span class="bar"></span>APEX</div>
+    <nav>
+      <a href="index.html#featured">Race</a>
+      <a href="index.html#sheet">Tech</a>
+      <a href="index.html#sheet">Paddock</a>
+      <a href="index.html#signup">Strategy</a>
+    </nav>
+    <button class="subscribe-btn">SUBSCRIBE →</button>
+  </header>
+
+  <div class="page-head">
+    <a class="back-link" href="index.html">← BACK TO APEX</a>
+    <span class="kicker">EVERY STORY, IN ORDER</span>
+    <h1>The Archive</h1>
+    <div class="count" id="archiveCount"></div>
+  </div>
+
+  <div class="filters" id="archiveFilters"></div>
+
+  <div class="archive-wrap">
+    <div class="sheet" id="archiveSheet"></div>
+  </div>
+
+  <footer>
+    <div>© 2026 APEX — Independent motorsport analysis</div>
+    <div class="flags">
+      <span class="dot" style="background:var(--green)"></span>
+      <span class="dot" style="background:var(--yellow)"></span>
+      <span class="dot" style="background:var(--red)"></span>
+      <span class="dot" style="background:var(--purple)"></span>
+    </div>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script>
+    function formatInline(text){
+      if(!text) return text;
+      return String(text)
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>');
+    }
+    function slugify(text){
+      return String(text).toLowerCase().trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '') || 'post';
+    }
+    function resolveIds(posts){
+      const used = new Set();
+      posts.forEach(p => {
+        let id = p.id ? slugify(p.id) : slugify(p.title);
+        let unique = id, n = 2;
+        while (used.has(unique)) { unique = `${id}-${n++}`; }
+        used.add(unique);
+        p._id = unique;
+      });
+      return posts;
+    }
+
+    const posts = resolveIds(window.POSTS || []);
+    const sheetEl = document.getElementById('archiveSheet');
+    const filtersEl = document.getElementById('archiveFilters');
+    const countEl = document.getElementById('archiveCount');
+
+    countEl.textContent = posts.length === 1 ? '1 story' : `${posts.length} stories`;
+
+    function renderRows(list){
+      if(!list.length){
+        sheetEl.innerHTML = `<div class="empty-note">No stories in this category yet.</div>`;
+        return;
+      }
+      sheetEl.innerHTML = list.map((p, idx) => {
+        const tagHTML = p.tag ? `<span class="tag ${p.tag}">${p.tag.toUpperCase()}</span>` : '';
+        const subHTML = p.summary ? `<span class="row-sub">${formatInline(p.summary)}</span>` : '';
+        const timeText = [p.date, p.readTime].filter(Boolean).join(' · ');
+        const timeHTML = timeText ? `<span class="row-time">${timeText}</span>` : '';
+        return `
+        <a class="sheet-row" href="post.html?post=${p._id}">
+          <span class="pos">${String(idx + 1).padStart(2, '0')}</span>
+          ${tagHTML}
+          <span class="row-title">${formatInline(p.title)}
+            ${subHTML}
+          </span>
+          ${timeHTML}
+          <span class="row-arrow">→</span>
+        </a>`;
+      }).join('');
+    }
+
+    // Filter pills — built from whichever tags actually appear in posts.js
+    const tagsPresent = [...new Set(posts.map(p => p.tag).filter(Boolean))];
+    const filters = ['all', ...tagsPresent];
+    filtersEl.innerHTML = filters.map(f =>
+      `<button class="filter-btn${f === 'all' ? ' active' : ''}" data-filter="${f}">${f.toUpperCase()}</button>`
+    ).join('');
+
+    filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtersEl.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        renderRows(f === 'all' ? posts : posts.filter(p => p.tag === f));
+      });
+    });
+
+    renderRows(posts);
+  </script>
+
+</body>
+</html>
